@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/popup_red"
+        android:title="BG-RED"
+        />
+    <item
+        android:id="@+id/popup_green"
+        android:title="BG-GREEN"
+        />
+    <item
+        android:id="@+id/popup_blue"
+        android:title="BG-BLUE"
+        />
+    <item
+        android:id="@+id/popup_sub"
+        android:title="sub_menu">
+        <menu>
+            <item
+                android:id="@+id/popup_black"
+                android:title="BG-BLACK" />
+            <item
+                android:id="@+id/popup_white"
+                android:title="BG-WHITE" />
+            <item
+                android:id="@+id/popup_yellow"
+                android:title="BG-YELLOW" />
+        </menu>
+    </item>
+</menu>
