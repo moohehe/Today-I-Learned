@@ -1,0 +1,5 @@
+Activity Create
+1.새로만들 Activity의 Layout을 XML파일에 정의한다.
+2.ActivityCode를 JavaFile에 작성한다.
+3.새로추가한 Activity를 Manifest에 등록한다.(App/manifests/AndroidManifest.xml)
+4.startActivity Method를 호출한다.
