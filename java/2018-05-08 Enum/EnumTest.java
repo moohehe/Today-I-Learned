@@ -1,7 +1,4 @@
 
-
-
-
 // gender1, gender2 에는 male, female값만 입력하도록 하고 싶다.
 public class EnumTest {
     public static void main(String[] args) {
