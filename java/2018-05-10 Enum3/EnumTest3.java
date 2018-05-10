@@ -1,5 +1,6 @@
+// http://woowabros.github.io/tools/2017/07/10/java-enum-uses.html
 
-public class EnumTest2
+public class EnumTest3
 {
 	public static void main(String[] args)
 	{
@@ -8,43 +9,29 @@ public class EnumTest2
 		// 서로 다른 계산식을 적용해야할 경우
 		// 예를 들어, cal_a는 그대로의 값을, calc_b는 *10한 값을, calc_c는 *3한 값을 입력하는 
 		
+		// DB의 테이블에서 뽑은 특정 값은 지정된 메소드와 관계가 있다.
+		
+		@Columns
+		@Enumrated(EnumType.STRING); // Enum 필드가 테이블에 저장시 숫자형인 1,2,3이 아닌 Enum의 name에 저장된다.
+		private CalculatorType calculatorType;
+		
+		CalculatorType code = selectType();
+		long originValue = 10000L;
+		long result = code.calculate(originValue);
+		
+		assertThat(result, is(10000L));
 		
 		
 		
 		
-	}
-}
-
-public enum TableStatus
-{
-	// Y, 1, true는 모두 같은 의미를 갖는다.
-	// N, 0, false는 모두 같은 의미를 갖는다.
-	Y("1", true), N("0", false);
-
-	private String table1Value;
-	private boolean table2Value;
-
-	TableStatus(String talbeValue, boolean table2Value)
-	{
-		this.table1Value = table1Value;
-		this.table2Value = table2Value;
-	}
-
-	public String getTable1Value()
-	{
-		return table1Value;
-	}
-
-	public boolean isTable2Value()
-	{
-		return table2Value;
 	}
 }
 
 public enum CalculatorType {
 	CALC_A(value -> value),
 	CALC_B(value -> value*10),
-	CALC_C(value -> value*3);
+	CALC_C(value -> value*3),
+	CALC_ETC(value -> 0L);
 	
 	private Function<Long,Long> expression;
 	
